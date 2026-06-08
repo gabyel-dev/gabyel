@@ -2,7 +2,7 @@
 
 const timeline = [
   {
-    role: "Full-Stack Developer",
+    role: "Full-Stack Web Developer",
     company: "Freelance",
     year: "2026",
     accent: true,

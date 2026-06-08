@@ -6,12 +6,12 @@ export default function About() {
         {" "}
         I&apos;m a freelance full-stack web developer and current IT student
         focused on building modern, responsive, and user-friendly web
-        applications using JavaScript and modern web technologies. <br /> <br />{" "}
-        I enjoy creating clean interfaces, developing scalable backend systems,
-        and turning ideas into functional digital products. My work includes
-        portfolio websites, dashboards, landing pages, and full-stack web
-        applications. <br /> <br /> Lately, I&apos;ve been exploring artificial
-        intelligence and learning how AI tools can improve workflows,
+        applications using JavaScript and using modern web technologies. <br />{" "}
+        <br /> I enjoy creating clean interfaces, developing scalable backend
+        systems, and turning ideas into functional digital products. My work
+        includes portfolio websites, dashboards, landing pages, and full-stack
+        web applications. <br /> <br /> Lately, I&apos;ve been exploring
+        artificial intelligence and learning how AI tools can improve workflows,
         automation, and modern web experiences.{" "}
       </p>
     </div>

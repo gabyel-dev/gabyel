@@ -3,6 +3,7 @@ import TechStack from "@/components/TechStack";
 import Projects from "@/components/Projects";
 import ExperienceTimeline from "@/components/ExperienceTimeline";
 import Footer from "@/components/Footer";
+import Link from "next/link";
 import { ModeToggle } from "@/components/ModeToggle";
 
 export default function Home() {
@@ -16,7 +17,7 @@ export default function Home() {
           <section className="mb-8 animate-fade-in">
             <div className="flex items-center gap-4 md:gap-6">
               <img
-                alt="Bryl Lim"
+                alt="Gab Guban"
                 width={160}
                 height={160}
                 className=" w-40 h-40 md:w-40 md:h-40 object-cover flex-shrink-0"
@@ -25,7 +26,7 @@ export default function Home() {
               <div className="flex-1 min-w-0">
                 <div className="flex items-center justify-between gap-2">
                   <div className="flex items-center gap-2">
-                    <h1 className="text-lg md:text-2xl font-bold truncate">
+                    <h1 className="text-lg md:text-2xl font-bold text-wrap">
                       Gabriel Guban
                     </h1>
                     <svg
@@ -71,10 +72,11 @@ export default function Home() {
                 </div>
                 <div className="space-y-2 mt-3 md:mt-4">
                   <div className="flex gap-2">
-                    <a
+                    <Link
                       className="inline-flex h-7 md:h-8 items-center bg-foreground px-2.5 md:px-4 text-[8px] md:text-xs font-medium text-background transition-all duration-200 hover:bg-foreground/90 hover:-translate-y-0.5 gap-1 md:gap-1.5 whitespace-nowrap min-h-0"
-                      href="/gab-guban-cv.pdf"
-                      download
+                      href="https://mdlewqabiyjigkacuepg.supabase.co/storage/v1/object/public/static-images/resume.pdf"
+                      target="_blank"
+                      rel="noopener noreferrer"
                     >
                       <svg
                         className="w-4 h-4"
@@ -103,7 +105,7 @@ export default function Home() {
                           d="M9 5l7 7-7 7"
                         />
                       </svg>
-                    </a>
+                    </Link>
                     <a
                       className="hidden md:inline-flex h-7 md:h-8 items-center  px-2.5 md:px-4 text-[8px] md:text-xs font-medium transition-all duration-200 hover:bg-black/2 hover:-translate-y-0.5 hover:shadow-[0_3px_10px_rgba(0,0,0,0.06)] gap-1 md:gap-1.5 whitespace-nowrap min-h-0"
                       href="mailto:gabguban7777@gmail.com"
@@ -185,7 +187,9 @@ export default function Home() {
                   ))}
                 </div>
               ) : (
-                <p className="text-sm text-foreground/70">No current certifications yet.</p>
+                <p className="text-sm text-foreground/70">
+                  No current certifications yet.
+                </p>
               )}
             </div>
 
@@ -198,7 +202,7 @@ export default function Home() {
                 </p>
                 <div className="grid grid-cols-1 gap-1">
                   <SocialLink
-                    href="https://linkedin.com/in/gabyel"
+                    href="https://www.linkedin.com/in/gab-guban-474237334/"
                     label="LinkedIn"
                   >
                     <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
@@ -233,27 +237,6 @@ export default function Home() {
                 </div>
               </div>
             </div>
-
-            {/* Currently Reading / Learning */}
-            <div className="bento-card p-4 space-y-3 group animate-fade-in animation-delay-600 col-span-1 md:col-span-3">
-              <h2 className="text-lg font-bold">Currently Reading</h2>
-              <div className="space-y-2">
-                <div className="flex items-start gap-2 text-sm text-foreground/70">
-                  <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-accent shrink-0" />
-                  <div>
-                    <p className="font-medium text-foreground/80">Designing Data-Intensive Applications</p>
-                    <p className="text-[11px]">Martin Kleppmann</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-2 text-sm text-foreground/70">
-                  <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-accent shrink-0" />
-                  <div>
-                    <p className="font-medium text-foreground/80">The Pragmatic Programmer</p>
-                    <p className="text-[11px]">Andrew Hunt & David Thomas</p>
-                  </div>
-                </div>
-              </div>
-            </div>
           </section>
         </div>
         <Footer />
@@ -271,7 +254,15 @@ function InfoRow({ label, value }: { label: string; value: string }) {
   );
 }
 
-function CertItem({ href, title, issuer }: { href: string; title: string; issuer: string }) {
+function CertItem({
+  href,
+  title,
+  issuer,
+}: {
+  href: string;
+  title: string;
+  issuer: string;
+}) {
   return (
     <a
       target="_blank"
@@ -317,64 +308,5 @@ function SocialLink({
         {label}
       </p>
     </a>
-  );
-}
-
-function ContactItem({
-  href,
-  icon,
-  label,
-  value,
-  external,
-}: {
-  href: string;
-  icon: React.ReactNode;
-  label: string;
-  value: string;
-  external?: boolean;
-}) {
-  const LinkOrAnchor = external ? "a" : "a";
-  const linkProps = external
-    ? { target: "_blank", rel: "noopener noreferrer" as const }
-    : {};
-
-  return (
-    <LinkOrAnchor
-      {...linkProps}
-      className="group p-1.5  shadow-[0_1px_2px_rgba(0,0,0,0.03),0_1px_1px_rgba(0,0,0,0.04)] hover:bg-foreground/10 hover:shadow-[0_3px_10px_rgba(0,0,0,0.06)] transition-all duration-200 hover:-translate-y-0.5 block"
-      href={href}
-    >
-      <div className="flex items-center gap-1 mb-0.5">
-        <svg
-          className="w-4 h-4"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          {icon}
-        </svg>
-        <p className="text-[9px] text-foreground/70 font-medium">{label}</p>
-      </div>
-      <div className="flex items-center justify-between">
-        <span className="text-[9px] font-medium text-foreground  transition-colors">
-          {value}
-        </span>
-        {external && (
-          <svg
-            className="w-4 h-4"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={1.5}
-              d="M9 5l7 7-7 7"
-            />
-          </svg>
-        )}
-      </div>
-    </LinkOrAnchor>
   );
 }

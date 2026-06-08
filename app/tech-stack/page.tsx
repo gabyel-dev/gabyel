@@ -11,14 +11,7 @@ export const metadata: Metadata = {
 const categories = [
   {
     name: "Frontend",
-    skills: [
-      "JavaScript",
-      "TypeScript",
-      "React",
-      "Next.js",
-      "Tailwind CSS",
-      "Prettier",
-    ],
+    skills: ["JavaScript", "TypeScript", "React", "Next.js", "Tailwind CSS"],
   },
   {
     name: "Backend",
@@ -28,18 +21,16 @@ const categories = [
       "Express.js",
       "Supabase",
       "PostgreSQL",
-      "MySQL",
-
+      ,
       "OAuth",
       "JWT",
-
       "REST",
     ],
   },
 
   {
     name: "Developer Tools",
-    skills: ["Git", "GitHub", "GitLab", "Bitbucket", "VS Code", "Discord"],
+    skills: ["Git", "GitHub", "GitLab", "VS Code", "Discord"],
   },
 ];
 
