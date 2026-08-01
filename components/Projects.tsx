@@ -6,12 +6,6 @@ const projects = [
     domain: "cartivo-v1.vercel.app",
   },
   {
-    title: "Blockstone",
-    desc: "Sales tracking dashboard for printing business",
-    url: "https://blockstone-prints.vercel.app",
-    domain: "blockstone-prints.vercel.app",
-  },
-  {
     title: "Thesis Repo",
     desc: "Thesis Repository for PTC BSIT 2I Students",
     url: "https://sts-research.vercel.app",

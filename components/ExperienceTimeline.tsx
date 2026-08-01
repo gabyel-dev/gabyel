@@ -31,7 +31,7 @@ export default function ExperienceTimeline() {
             <div
               className={`absolute left-0 top-1.5 w-3 h-3  border-2 transition-colors ${
                 item.accent
-                  ? " bg-black"
+                  ? "bg-black "
                   : "border-border bg-background group-hover/role:bg-black"
               }`}
             />

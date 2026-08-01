@@ -4,7 +4,7 @@ export default function About() {
       <h2 className="text-lg font-bold">About</h2>
       <p className="text-sm text-foreground/70 leading-relaxed">
         {" "}
-        I&apos;m a freelance full-stack web developer and current IT student
+        I&apos;m a full-stack web developer and current IT student
         focused on building modern, responsive, and user-friendly web
         applications using JavaScript and using modern web technologies. <br />{" "}
         <br /> I enjoy creating clean interfaces, developing scalable backend

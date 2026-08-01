@@ -74,7 +74,7 @@ export default function Home() {
                   <div className="flex gap-2">
                     <Link
                       className="inline-flex h-7 md:h-8 items-center bg-foreground px-2.5 md:px-4 text-[8px] md:text-xs font-medium text-background transition-all duration-200 hover:bg-foreground/90 hover:-translate-y-0.5 gap-1 md:gap-1.5 whitespace-nowrap min-h-0"
-                      href="https://mdlewqabiyjigkacuepg.supabase.co/storage/v1/object/public/static-images/resume.pdf"
+                      href="https://mdlewqabiyjigkacuepg.supabase.co/storage/v1/object/public/static-images/resume-v2.pdf"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
