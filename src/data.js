@@ -50,15 +50,34 @@ export const experience = [
     year: "2026",
     accent: true,
   },
+
+  {
+  role: "Built My First Full-Stack Project",
+  company: "Cartivo — E-commerce Platform",
+  year: "2026",
+},  
+
+{
+  role: "Started Learning Javascript",
+  company: "Online Courses & Tutorials",
+  year: "2025",
+},  
+  
+  {
+    role: "Hello World! 👋🏻",
+    company: "Wrote my first line of code",
+    year: "2024",
+  },
+
   {
     role: "BS Information Technology",
     company: "Pateros Technological College",
     year: "2024",
   },
   {
-    role: "Hello World! 👋🏻",
-    company: "Wrote my first line of code",
-    year: "2024",
+    role: "Network & Server Configuration",
+    company: "ICT - Senior High School",
+    year: "2023",
   },
 ];
 
