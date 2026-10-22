@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
+import { profile, site } from "@/src/data";
 import "./globals.css";
 
 const inter = Inter({
@@ -15,19 +16,10 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Gab Guban - Web Developer",
-  description:
-    "Full-stack Web Developer specializing in React and Node.js. Passionate about building efficient and scalable web applications. Open to freelance opportunities.",
-  authors: [{ name: "Gab Guban" }],
-  keywords: [
-    "Software Engineer",
-    "Full Stack Developer",
-    "Web Development",
-    "JavaScript",
-    "Python",
-    "PHP",
-    "Content Creator",
-  ],
+  title: site.title,
+  description: site.description,
+  authors: [{ name: profile.name }],
+  keywords: site.keywords,
 };
 
 export default function RootLayout({
@@ -38,10 +30,10 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${jetbrainsMono.variable}`}
+      className={`${inter.variable} ${jetbrainsMono.variable} scroll-smooth`}
       suppressHydrationWarning
     >
-      <body className="bg-background text-foreground font-sans antialiased">
+      <body className="bg-background font-sans text-foreground antialiased selection:bg-foreground selection:text-background">
         {children}
       </body>
     </html>

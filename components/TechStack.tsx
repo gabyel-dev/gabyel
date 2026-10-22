@@ -1,15 +1,18 @@
+import Link from "next/link";
+import { stackCategories } from "@/src/data";
+
 export default function TechStack() {
   return (
-    <div className="bento-card p-4 col-span-1 md:col-span-4 space-y-2 group animate-fade-in animation-delay-200">
+    <div className="col-span-1 space-y-2 rounded-xs border border-border bg-card p-4 shadow-xs transition-all duration-200 hover:shadow-sm md:col-span-4">
       <div className="flex items-center justify-between">
         <h2 className="text-lg font-bold">Tech Stack</h2>
-        <a
+        <Link
           href="/tech-stack"
-          className="text-xs text-foreground/70 hover:text-foreground flex items-center gap-1 transition-colors"
+          className="flex items-center gap-1 text-xs text-muted-foreground transition-colors hover:text-foreground"
         >
           View All
           <svg
-            className="w-3 h-3"
+            className="h-3 w-3"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -21,41 +24,24 @@ export default function TechStack() {
               d="M9 5l7 7-7 7"
             />
           </svg>
-        </a>
+        </Link>
       </div>
       <div className="space-y-4">
-        <div>
-          <h3 className="text-sm font-semibold mb-2">Frontend</h3>
-          <div className="flex flex-wrap gap-1.5">
-            {[
-              "JavaScript",
-              "TypeScript",
-              "React",
-              "Next.js",
-              "Tailwind CSS",
-            ].map((s) => (
-              <span
-                key={s}
-                className="px-2 py-0.5 text-xs rounded-md bg-foreground/5 shadow-[0_1px_1px_rgba(0,0,0,0.03)]"
-              >
-                {s}
-              </span>
-            ))}
+        {stackCategories.slice(0, 2).map((category) => (
+          <div key={category.name}>
+            <h3 className="mb-2 text-sm font-semibold">{category.name}</h3>
+            <div className="flex flex-wrap gap-1.5">
+              {category.skills.map((skill) => (
+                <span
+                  key={skill}
+                  className="rounded-xs bg-muted px-2 py-0.5 text-xs shadow-xs"
+                >
+                  {skill}
+                </span>
+              ))}
+            </div>
           </div>
-        </div>
-        <div>
-          <h3 className="text-sm font-semibold mb-2">Backend</h3>
-          <div className="flex flex-wrap gap-1.5">
-            {["Node.js", "PostgreSQL", "Supabase"].map((s) => (
-              <span
-                key={s}
-                className="px-2 py-0.5 text-xs rounded-md bg-foreground/5 shadow-[0_1px_1px_rgba(0,0,0,0.03)]"
-              >
-                {s}
-              </span>
-            ))}
-          </div>
-        </div>
+        ))}
       </div>
     </div>
   );

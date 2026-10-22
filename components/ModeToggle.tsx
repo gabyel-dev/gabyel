@@ -23,16 +23,16 @@ export function ModeToggle() {
     <button
       onClick={toggle}
       aria-label="Toggle theme"
-      className="relative inline-flex h-6 w-11 items-center  transition-all duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 min-h-0 min-w-0 bg-gray-300 hover:bg-gray-400"
+      className="relative inline-flex h-6 w-11 min-h-0 min-w-0 items-center bg-muted transition-colors duration-300 ease-in-out hover:bg-muted-foreground/30 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background"
     >
       <div
-        className={`absolute left-0.5 top-0.5 flex h-5 w-5 items-center justify-center  bg-white shadow-[0_1px_2px_rgba(0,0,0,0.08)] transition-all duration-300 ease-in-out ${
+        className={`absolute top-0.5 left-0.5 flex h-5 w-5 items-center justify-center bg-foreground shadow-xs transition-all duration-300 ease-in-out ${
           dark ? "translate-x-5" : "translate-x-0"
         }`}
       >
         {dark ? (
           <svg
-            className="h-3 w-3 text-gray-500"
+            className="h-3 w-3 text-background"
             fill="currentColor"
             viewBox="0 0 20 20"
           >
@@ -40,7 +40,7 @@ export function ModeToggle() {
           </svg>
         ) : (
           <svg
-            className="h-3 w-3 text-gray-500"
+            className="h-3 w-3 text-background"
             fill="currentColor"
             viewBox="0 0 20 20"
           >

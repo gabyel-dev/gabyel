@@ -1,32 +1,18 @@
-const projects = [
-  {
-    title: "Cartivo",
-    desc: "E-commerce platform for watches",
-    url: "https://cartivo-v1.vercel.app",
-    domain: "cartivo-v1.vercel.app",
-  },
-  {
-    title: "Thesis Repo",
-    desc: "Thesis Repository for PTC BSIT 2I Students",
-    url: "https://sts-research.vercel.app",
-    domain: "sts-research.vercel.app",
-  },
-];
-
 import Link from "next/link";
+import { projects } from "@/src/data";
 
 export default function Projects() {
   return (
-    <div className="bento-card p-4 col-span-1 md:col-span-4 space-y-2 group animate-fade-in animation-delay-300">
+    <div className="col-span-1 space-y-2 rounded-xs border border-border bg-card p-4 shadow-xs transition-all duration-200 hover:shadow-sm md:col-span-4">
       <div className="flex items-center justify-between">
         <h2 className="text-lg font-bold">Recent Projects</h2>
         <Link
           href="/projects"
-          className="text-xs text-foreground/70 hover:text-foreground flex items-center gap-1 transition-colors"
+          className="flex items-center gap-1 text-xs text-muted-foreground transition-colors hover:text-foreground"
         >
           View All
           <svg
-            className="w-3 h-3"
+            className="h-3 w-3"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -40,21 +26,24 @@ export default function Projects() {
           </svg>
         </Link>
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-        {projects.map((p) => (
-          <div key={p.title} className="bento-card p-3 space-y-1">
-            <Link
-              href={p.url}
+      <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
+        {projects.map((project) => (
+          <div
+            key={project.title}
+            className="space-y-1 rounded-xs border border-border bg-muted/40 p-3 transition-colors hover:bg-muted"
+          >
+            <a
+              href={project.url}
               target="_blank"
               rel="noopener noreferrer"
               className="block space-y-1"
             >
-              <h3 className="text-sm font-semibold ">{p.title}</h3>
-              <p className="text-xs text-foreground/70">{p.desc}</p>
-              <p className="text-xs text-foreground/50 font-mono bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded-md inline-block mt-1">
-                {p.domain}
+              <h3 className="text-sm font-semibold">{project.title}</h3>
+              <p className="text-xs text-muted-foreground">{project.desc}</p>
+              <p className="mt-1 inline-block rounded-xs bg-muted px-2 py-1 font-mono text-xs text-muted-foreground">
+                {project.domain}
               </p>
-            </Link>
+            </a>
           </div>
         ))}
       </div>
